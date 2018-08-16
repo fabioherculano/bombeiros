@@ -1,15 +1,3 @@
-<<<<<<< HEAD
-=======
-###################
-<<<<<<< HEAD
-What is CodeIgniter 
-Author Fabio Herculano
-=======
-What is CodeIgniter
->>>>>>> 3a4035b5ca2fc57883047e9777345a4a479e5068
-###################
->>>>>>> 65088b19c255be43061051e935a156433ecf2d83
-
 CodeIgniter is an Application Development Framework - a toolkit - for people
 who build web sites using PHP. Its goal is to enable you to develop projects
 much faster than you could if you were writing code from scratch, by providing
