@@ -1,5 +1,6 @@
 ###################
-What is CodeIgniter
+What is CodeIgniter 
+Author Fabio Herculano
 ###################
 
 CodeIgniter is an Application Development Framework - a toolkit - for people
