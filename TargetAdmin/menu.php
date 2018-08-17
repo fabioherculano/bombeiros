@@ -11,14 +11,14 @@
                     </li>
 					<li>
                         <a href="/bombeiros/consulta" class="waves-effect waves-dark"><i class="fa fa-bar-chart-o"></i> Consulta</a>
-                    </li>
-                    <!--<li>
-                        <a href="tab-panel.html" class="waves-effect waves-dark"><i class="fa fa-qrcode"></i> Tabs & Panels</a>
-                    </li>
+                    <!--</li>
+                        <a href="tab-panel.html" class="waves-effect waves-dark"><i class="fa fa-qrcode"></i> Informações</a>
+                    </li>-->
                     
                     <li>
-                        <a href="table.html" class="waves-effect waves-dark"><i class="fa fa-table"></i> Responsive Tables</a>
+                        <a href="table.html" class="waves-effect waves-dark"><i class="fa fa-table"></i> Informações</a>
                     </li>
+                    <!--<li>
                     <li>
                         <a href="form.html" class="waves-effect waves-dark"><i class="fa fa-edit"></i> Forms </a>
                     </li>
