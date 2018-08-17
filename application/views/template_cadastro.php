@@ -1,12 +1,14 @@
 <?php
 
-#include 'TargetAdmin/index.html';
+#include 'TargetAdmin/index.php';
 
 #include 'TargetAdmin/chart.html';
-
+	
 #include 'TargetAdmin/empty.html';
 
+
 include 'TargetAdmin/cadastro.php';
+//echo "tem cadastro";
 
 #include 'TargetAdmin/tab-panel.html';
 
