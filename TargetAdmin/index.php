@@ -228,7 +228,13 @@
 			<div class="dashboard-cards"> 
                 <div class="row">
                     <div class="col-xs-12 col-sm-6 col-md-3">
-					
+						<?php
+						
+							foreach($lista as $item){ 
+							  echo $item['nome'] .'<br>';
+							}
+
+						?>
 						<div class="card horizontal cardIcon waves-effect waves-dark">
 						<div class="card-image red">
 						<i class="material-icons dp48">import_export</i>
