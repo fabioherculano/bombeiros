@@ -57,3 +57,4 @@ $route['translate_uri_dashes'] = FALSE;
 
 
 $route['pessoas'] = 'principal/cadastro';
+$route['consulta'] = 'principal/consulta';

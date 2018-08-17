@@ -10,9 +10,9 @@
                         <a href="/bombeiros/cadastro" class="waves-effect waves-dark"><i class="fa fa-desktop"></i> Cadastro</a>
                     </li>
 					<li>
-                        <a href="chart.html" class="waves-effect waves-dark"><i class="fa fa-bar-chart-o"></i> Charts</a>
+                        <a href="/bombeiros/consulta" class="waves-effect waves-dark"><i class="fa fa-bar-chart-o"></i> Consulta</a>
                     </li>
-                    <li>
+                    <!--<li>
                         <a href="tab-panel.html" class="waves-effect waves-dark"><i class="fa fa-qrcode"></i> Tabs & Panels</a>
                     </li>
                     
@@ -53,7 +53,7 @@
                     </li>
                     <li>
                         <a href="empty.html" class="waves-effect waves-dark"><i class="fa fa-fw fa-file"></i> Empty Page</a>
-                    </li>
+                    </li>-->
                 </ul>
 
             </div>

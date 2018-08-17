@@ -5,5 +5,11 @@ class Principal extends CI_Controller{
                 /*carrega a nossa view */
         $this->load->view('template_principal');
     }
-}
+
+    function consulta(){
+                /*carrega a nossa view */
+        $this->load->view('template_consulta');
+    }
+
+  }
 ?>
