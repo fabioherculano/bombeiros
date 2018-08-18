@@ -7,10 +7,10 @@
                         <a class="active-menu waves-effect waves-dark" href="/bombeiros"><i class="fa fa-dashboard"></i> Dashboard</a>
                     </li>
                     <li>
-                        <a href="/bombeiros/cadastro" class="waves-effect waves-dark"><i class="fa fa-desktop"></i> Cadastro</a>
+                        <a href="/bombeiros/consulta" class="waves-effect waves-dark"><i class="fa fa-desktop"></i> Cadastro</a>
                     </li>
 					<li>
-                        <a href="/bombeiros/consulta" class="waves-effect waves-dark"><i class="fa fa-bar-chart-o"></i> Consulta</a>
+                        <a href="/bombeiros/cadastro" class="waves-effect waves-dark"><i class="fa fa-bar-chart-o"></i> Consulta</a>
                     <!--</li>
                         <a href="tab-panel.html" class="waves-effect waves-dark"><i class="fa fa-qrcode"></i> Informações</a>
                     </li>-->

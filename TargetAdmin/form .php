@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Track Material Design Bootstrap Admin Template</title>
+    <title>Target Material Design Bootstrap Admin Template</title>
 	
 	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 	<link rel="stylesheet" href="assets/materialize/css/materialize.min.css" media="screen,projection" />
@@ -212,134 +212,268 @@
                                 <i class="fa fa-angle-right"></i>
                             </a>
                         </li>
-</ul>   
+</ul>  
 	   <!--/. NAV TOP  -->
         <!--/. NAV TOP  -->
-        <?php
-        include 'menu.php';
-       ?>
+        <nav class="navbar-default navbar-side" role="navigation">
+            <div class="sidebar-collapse">
+                <ul class="nav" id="main-menu">
+
+                    <li>
+                        <a href="index.html" class="waves-effect waves-dark"><i class="fa fa-dashboard"></i> Dashboard</a>
+                    </li>
+                    <li>
+                        <a href="ui-elements.html" class="waves-effect waves-dark"><i class="fa fa-desktop"></i> UI Elements</a>
+                    </li>
+					<li>
+                        <a href="chart.html" class="waves-effect waves-dark"><i class="fa fa-bar-chart-o"></i> Charts</a>
+                    </li>
+                    <li>
+                        <a href="tab-panel.html" class="waves-effect waves-dark"><i class="fa fa-qrcode"></i> Tabs & Panels</a>
+                    </li>
+                    
+                    <li>
+                        <a href="table.html" class="waves-effect waves-dark"><i class="fa fa-table"></i> Responsive Tables</a>
+                    </li>
+                    <li>
+                        <a href="form.html" class="active-menu waves-effect waves-dark"><i class="fa fa-edit"></i> Forms </a>
+                    </li>
+
+
+                    <li>
+                        <a href="#" class="waves-effect waves-dark"><i class="fa fa-sitemap"></i> Multi-Level Dropdown<span class="fa arrow"></span></a>
+                        <ul class="nav nav-second-level">
+                            <li>
+                                <a href="#">Second Level Link</a>
+                            </li>
+                            <li>
+                                <a href="#">Second Level Link</a>
+                            </li>
+                            <li>
+                                <a href="#" class="waves-effect waves-dark">Second Level Link<span class="fa arrow"></span></a>
+                                <ul class="nav nav-third-level">
+                                    <li>
+                                        <a href="#">Third Level Link</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Third Level Link</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Third Level Link</a>
+                                    </li>
+
+                                </ul>
+
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="empty.html" class="waves-effect waves-dark"><i class="fa fa-fw fa-file"></i> Empty Page</a>
+                    </li>
+                </ul>
+
+            </div>
+
+        </nav>
         <!-- /. NAV SIDE  -->
         <div id="page-wrapper" >
 		  <div class="header"> 
                         <h1 class="page-header">
-                            Consulta
+                             Form Inputs Page
                         </h1>
-
 						<ol class="breadcrumb">
 					  <li><a href="#">Home</a></li>
-					  <li><a href="#">Consulta</a></li>
-					  <li class="active">List</li>
+					  <li><a href="#">Forms</a></li>
+					  <li class="active">Data</li>
 					</ol> 
 									
 		</div>
 		
             <div id="page-inner"> 
-               
-            <div class="row">
-                <div class="col-md-12">
-                    <!-- Advanced Tables -->
-                    <div class="card">
-                       
-                        <div class="card-content">
-                            <div class="table-responsive">
-                                <table class="table table-striped table-bordered table-hover" id="dataTables-example">
-                                    <thead>
-                                        <tr>
-                                            <th>Nome</th>
-                                            <th>Idade</th>
-                                            <th>CPF</th>
-                                            <th>Sexo</th>
-                                            <th>Escolaridade</th>
-                                            <th>Opções</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <?php
-                        
-                                            function calculdaIdade($d){
-                                                 // Declara a data! :P
-                                                $data = $d;
-                                                list($ano, $mes, $dia) = explode('-', $data);
-                                                $hoje = mktime(0, 0, 0, date('m'), date('d'), date('Y'));
-                                                $nascimento = mktime( 0, 0, 0, $mes, $dia, $ano);
-                                                $idade = floor((((($hoje - $nascimento) / 60) / 60) / 24) / 365.25);
-                                                print $idade;
-                                            }
-                                            foreach($lista as $item){ 
-                                             echo '   
-                                            <tr class="odd gradeX">
-                                                <td>'.$item['nome'].'</td>
-                                                <td>';
-                                                    
-                                                    calculdaIdade($item['nasc']);
-                                                    //echo $item['nasc'];
-                                                    echo " Anos";
-                                                echo '</td>
-                                                <td>'.$item['cpf'].'</td>
-                                                <td>';
-                                                if ($item['sexo']=='t') {
-                                                    echo "Masculino";
-                                                }else{
-                                                    echo "Feminimo";
-                                                }
-                                                echo '</td>
-                                                <td>';
-                                                if ($item['fundamental']=='t')
-                                                    echo "Fundamental";
-                                                if ($item['medio']=='t')
-                                                    echo " Medio";
-                                                if ($item['superior']=='t')
-                                                    echo " Graduação";
-                                               echo ' </td>';
-                                             echo '<td><i class="material-icons dp48">mode_edit</i><i class="material-icons dp48">delete</i></td>';
-                                            echo '</tr>';
-                                            }
-
-                                        ?>
-                                        <!--<tr class="odd gradeX">
-                                            <td>Trident</td>
-                                            <td>Internet Explorer 4.0</td>
-                                            <td>Win 95+</td>
-                                            <td class="center">4</td>
-                                            <td class="center">X</td>
-                                        </tr>
-                                        <tr class="even gradeC">
-                                            <td>Trident</td>
-                                            <td>Internet Explorer 5.0</td>
-                                            <td>Win 95+</td>
-                                            <td class="center">5</td>
-                                            <td class="center">C</td>
-                                        </tr>
-                                        
-                                        <tr class="gradeU">
-                                            <td>Other browsers</td>
-                                            <td>All others</td>
-                                            <td>-</td>
-                                            <td class="center">-</td>
-                                            <td class="center">U</td>
-                                        </tr>-->
-                                    </tbody>
-                                </table>
-                            </div>
-                            
+			 <div class="row">
+			 <div class="col-lg-12">
+			 <div class="card">
+                        <div class="card-action">
+                            Basic Form Elements
                         </div>
-                    </div>
-                    <!--End Advanced Tables -->
-                </div>
-            </div>
-                <!-- /. ROW  -->
-            
-         
-               <footer><p>Shared by <i class="fa fa-love"></i><a href="https://bootstrapthemes.co">BootstrapThemes</a>
-</p></footer>
+                        <div class="card-content">
+    <form class="col s12">
+      <div class="row">
+        <div class="input-field col s6">
+          <input placeholder="Placeholder" id="first_name" type="text" class="validate">
+          <label for="first_name">First Name</label>
+        </div>
+        <div class="input-field col s6">
+          <input id="last_name" type="text" class="validate">
+          <label for="last_name">Last Name</label>
+        </div>
+      </div>
+      <div class="row">
+        <div class="input-field col s12">
+          <input disabled value="I am not editable" id="disabled" type="text" class="validate">
+          <label for="disabled">Disabled</label>
+        </div>
+      </div>
+      <div class="row">
+        <div class="input-field col s12">
+          <input id="password" type="password" class="validate">
+          <label for="password">Password</label>
+        </div>
+      </div>
+      <div class="row">
+        <div class="input-field col s12">
+          <input id="email" type="email" class="validate">
+          <label for="email">Email</label>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col s12">
+          This is an inline input field:
+          <div class="input-field inline">
+            <input id="email" type="email" class="validate">
+            <label for="email" data-error="wrong" data-success="right">Email</label>
+          </div>
+        </div>
+      </div>
+    </form>
+	<div class="clearBoth"></div>
+  </div>
     </div>
+ </div>	
+	 </div>		
+              <div class="row">
+                <div class="col-lg-6">
+                    <div class="card">
+                        <div class="card-action">
+                            Basic Form Elements
+                        </div>
+                        <div class="card-content">
+                         	<form class="col s12">
+								  <div class="row">
+									<div class="input-field col s6">
+									  <i class="material-icons prefix">account_circle</i>
+									  <input id="icon_prefix" type="text" class="validate">
+									  <label for="icon_prefix">First Name</label>
+									</div>
+									<div class="input-field col s6">
+									  <i class="material-icons prefix">phone</i>
+									  <input id="icon_telephone" type="tel" class="validate">
+									  <label for="icon_telephone">Telephone</label>
+									</div>
+								  </div>
+								</form>
+								
+								<form class="col s12">
+								  <div class="row">
+									<div class="input-field col s12">
+									  <input id="email" type="email" class="validate">
+									  <label for="email" data-error="wrong" data-success="right">Email</label>
+									</div>
+								  </div>
+								</form>
+								
+								  <form class="col s12">
+							  <div class="row">
+								<div class="input-field col s12">
+								  <textarea id="textarea1" class="materialize-textarea"></textarea>
+								  <label for="textarea1">Textarea</label>
+								</div>
+							  </div>
+							</form>
+							  </form>
+ 
+   <!-- Switch -->
+  <div class="switch">
+    <label>
+      Off
+      <input type="checkbox">
+      <span class="lever"></span>
+      On
+    </label>
+  </div>
+
+  <!-- Disabled Switch -->
+  <div class="switch">
+    <label>
+      Off
+      <input disabled type="checkbox">
+      <span class="lever"></span>
+      On
+    </label>
+  </div>
+							<div class="clearBoth"></div>
+							</div>
+							</div>
+							</div>
+							 <div class="col-lg-6">
+                    <div class="card">
+                        <div class="card-action">
+                            Basic Form Elements
+                        </div>
+                        <div class="card-content">
+						
+								  <form action="#">
+    <p>
+      <input name="group1" type="radio" id="test1" />
+      <label for="test1">Red</label>
+    </p>
+    <p>
+      <input name="group1" type="radio" id="test2" />
+      <label for="test2">Yellow</label>
+    </p>
+    <p>
+      <input class="with-gap" name="group1" type="radio" id="test3"  />
+      <label for="test3">Green</label>
+    </p>
+      <p>
+        <input name="group1" type="radio" id="test4" disabled="disabled" />
+        <label for="test4">Brown</label>
+    </p>
+  </form>
+         <form action="#">
+    <p>
+      <input type="checkbox" id="test5" />
+      <label for="test5">Red</label>
+    </p>
+    <p>
+      <input type="checkbox" id="test6" checked="checked" />
+      <label for="test6">Yellow</label>
+    </p>
+    <p>
+      <input type="checkbox" class="filled-in" id="filled-in-box" checked="checked" />
+      <label for="filled-in-box">Filled in</label>
+    </p>
+    <p>
+      <input type="checkbox" id="indeterminate-checkbox" />
+      <label for="indeterminate-checkbox">Indeterminate Style</label>
+    </p>
+    <p>
+      <input type="checkbox" id="test7" checked="checked" disabled="disabled" />
+      <label for="test7">Green</label>
+    </p>
+      <p>
+        <input type="checkbox" id="test8" disabled="disabled" />
+        <label for="test8">Brown</label>
+    </p>
+
+        
+                                </div>
+                               
+                            </div>
+                            <!-- /.row (nested) -->
+                        </div>
+                        <!-- /.panel-body -->
+                    </div> 
+                <!-- /.col-lg-12 --> 
+			<footer><p>Shared by <i class="fa fa-love"></i><a href="https://bootstrapthemes.co">BootstrapThemes</a>
+</p></footer>
+			</div>
              <!-- /. PAGE INNER  -->
             </div>
          <!-- /. PAGE WRAPPER  -->
+        </div>
      <!-- /. WRAPPER  -->
     <!-- JS Scripts-->
- 
-
     <!-- jQuery Js -->
     <script src="assets/js/jquery-1.10.2.js"></script>
 	
@@ -359,14 +493,7 @@
 	<script src="assets/js/easypiechart-data.js"></script>
 	
 	 <script src="assets/js/Lightweight-Chart/jquery.chart.js"></script>
-	 <!-- DATA TABLE SCRIPTS -->
-    <script src="assets/js/dataTables/jquery.dataTables.js"></script>
-    <script src="assets/js/dataTables/dataTables.bootstrap.js"></script>
-        <script>
-            $(document).ready(function () {
-                $('#dataTables-example').dataTable();
-            });
-    </script>
+	
     <!-- Custom Js -->
     <script src="assets/js/custom-scripts.js"></script> 
  
