@@ -2,7 +2,7 @@
 if (!defined('BASEPATH')) exit('No direct script access allowed');
 class MY_Model extends CI_Model {
   // Variável que define o nome da tabela
-  var $table = "";
+  var $table = "pessoas";
   /**
   * Método Construtor
   */
@@ -19,7 +19,27 @@ class MY_Model extends CI_Model {
   function Inserir($data) {
     if(!isset($data))
       return false;
-    return $this->db->insert($this->table, $data);
+
+  
+    $data = array(
+            'nome' => $data->nome,
+            'nasc' => $data->nasc,
+            'cpf' => $data->cpf,
+            'sexo' => $data->sexo,
+            'fundamental' => $data->fundamental,
+            'medio' => $data->medio,
+            'superior' => $data->superior
+            
+
+
+    );
+
+    //var_dump($data);
+    //exit();
+
+
+    $this->db->insert('pessoas', $data);
+    //return $this->db->insert('pessoas',$dados);
   }
   /**
   * Recupera um registro a partir de um ID
@@ -86,5 +106,14 @@ class MY_Model extends CI_Model {
     $this->db->where('id', $id);
     return $this->db->delete($this->table);
   }
+
+  function Recuperar($id){
+    $this->db->where('id',$id);
+    echo "aquiiii";
+      $query = $this->db->get($this->table);
+      var_dump($query);
+      exit();
+  }
+
 }
 /* End of file */

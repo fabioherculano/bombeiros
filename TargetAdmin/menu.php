@@ -3,9 +3,7 @@
             <div class="sidebar-collapse">
                 <ul class="nav" id="main-menu">
 
-                    <li>
-                        <a class="active-menu waves-effect waves-dark" href="/bombeiros"><i class="fa fa-dashboard"></i> Dashboard</a>
-                    </li>
+                   
                     <li>
                         <a href="/bombeiros/consulta" class="waves-effect waves-dark"><i class="fa fa-desktop"></i> Cadastro</a>
                     </li>
@@ -15,8 +13,8 @@
                         <a href="tab-panel.html" class="waves-effect waves-dark"><i class="fa fa-qrcode"></i> Informações</a>
                     </li>-->
                     
-                    <li>
-                        <a href="table.html" class="waves-effect waves-dark"><i class="fa fa-table"></i> Informações</a>
+                     <li>
+                        <a class="active-menu waves-effect waves-dark" href="/bombeiros"><i class="fa fa-dashboard"></i> Informações</a>
                     </li>
                     <!--<li>
                     <li>

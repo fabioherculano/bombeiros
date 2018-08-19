@@ -4,21 +4,21 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Track Material Design Bootstrap Admin Template</title>
+    <title>Avaliação dos Bombeiros</title>
 	
 	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-	<link rel="stylesheet" href="assets/materialize/css/materialize.min.css" media="screen,projection" />
+	<link rel="stylesheet" href="<?=base_url()?>assets/materialize/css/materialize.min.css" media="screen,projection" />
     <!-- Bootstrap Styles-->
-    <link href="assets/css/bootstrap.css" rel="stylesheet" />
+    <link href="<?=base_url()?>assets/css/bootstrap.css" rel="stylesheet" />
     <!-- FontAwesome Styles-->
-    <link href="assets/css/font-awesome.css" rel="stylesheet" />
+    <link href="<?=base_url()?>assets/css/font-awesome.css" rel="stylesheet" />
     <!-- Morris Chart Styles-->
-    <link href="assets/js/morris/morris-0.4.3.min.css" rel="stylesheet" />
+    <link href="<?=base_url()?>assets/js/morris/morris-0.4.3.min.css" rel="stylesheet" />
     <!-- Custom Styles-->
-    <link href="assets/css/custom-styles.css" rel="stylesheet" />
+    <link href="<?=base_url()?>assets/css/custom-styles.css" rel="stylesheet" />
     <!-- Google Fonts-->
     <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css' />
-    <link rel="stylesheet" href="assets/js/Lightweight-Chart/cssCharts.css"> 
+    <link rel="stylesheet" href="<?=base_url()?>assets/js/Lightweight-Chart/cssCharts.css"> 
 </head>
 <body>
     <div id="wrapper">
@@ -30,7 +30,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand waves-effect waves-dark" href="index.html"><i class="large material-icons">track_changes</i> <strong>target</strong></a>
+                <a class="navbar-brand waves-effect waves-dark" href="index.html"><i class="large material-icons">track_changes</i> <strong>Aval. Bombeiros</strong></a>
 				
 		<div id="sideNav" href=""><i class="material-icons dp48">toc</i></div>
             </div>
@@ -284,14 +284,14 @@
                                                 }
                                                 echo '</td>
                                                 <td>';
-                                                if ($item['fundamental']=='t')
+                                                if ($item['fundamental'] =='t')
                                                     echo "Fundamental";
-                                                if ($item['medio']=='t')
+                                                if ($item['medio']  =='t')
                                                     echo " Medio";
-                                                if ($item['superior']=='t')
+                                                if ($item['superior'] =='t')
                                                     echo " Graduação";
                                                echo ' </td>';
-                                             echo '<td><i class="material-icons dp48">mode_edit</i><i class="material-icons dp48">delete</i></td>';
+                                             echo '<td><a href='.base_url().'consulta/editar/'.$item['id'].'><i class="material-icons dp48">mode_edit</i></a><a href='.base_url().'cadastro/excluir/'.$item['id'].'><i class="material-icons dp48">delete</i></a></td>';
                                             echo '</tr>';
                                             }
 
@@ -330,7 +330,7 @@
                 <!-- /. ROW  -->
             
          
-               <footer><p>Shared by <i class="fa fa-love"></i><a href="https://bootstrapthemes.co">BootstrapThemes</a>
+               <footer><p>Desenvolvido por <i class="fa fa-love"></i><a href="#">Fabio Herculano</a>
 </p></footer>
     </div>
              <!-- /. PAGE INNER  -->
@@ -341,34 +341,34 @@
  
 
     <!-- jQuery Js -->
-    <script src="assets/js/jquery-1.10.2.js"></script>
+    <script src="<?=base_url()?>assets/js/jquery-1.10.2.js"></script>
 	
 	<!-- Bootstrap Js -->
-    <script src="assets/js/bootstrap.min.js"></script>
+    <script src="<?=base_url()?>assets/js/bootstrap.min.js"></script>
 	
-	<script src="assets/materialize/js/materialize.min.js"></script>
+	<script src="<?=base_url()?>assets/materialize/js/materialize.min.js"></script>
 	
     <!-- Metis Menu Js -->
-    <script src="assets/js/jquery.metisMenu.js"></script>
+    <script src="<?=base_url()?>assets/js/jquery.metisMenu.js"></script>
     <!-- Morris Chart Js -->
-    <script src="assets/js/morris/raphael-2.1.0.min.js"></script>
-    <script src="assets/js/morris/morris.js"></script>
+    <script src="<?=base_url()?>assets/js/morris/raphael-2.1.0.min.js"></script>
+    <script src="<?=base_url()?>assets/js/morris/morris.js"></script>
 	
 	
-	<script src="assets/js/easypiechart.js"></script>
-	<script src="assets/js/easypiechart-data.js"></script>
+	<script src="<?=base_url()?>assets/js/easypiechart.js"></script>
+	<script src="<?=base_url()?>assets/js/easypiechart-data.js"></script>
 	
-	 <script src="assets/js/Lightweight-Chart/jquery.chart.js"></script>
+	 <script src="<?=base_url()?>assets/js/Lightweight-Chart/jquery.chart.js"></script>
 	 <!-- DATA TABLE SCRIPTS -->
-    <script src="assets/js/dataTables/jquery.dataTables.js"></script>
-    <script src="assets/js/dataTables/dataTables.bootstrap.js"></script>
+    <script src="<?=base_url()?>assets/js/dataTables/jquery.dataTables.js"></script>
+    <script src="<?=base_url()?>assets/js/dataTables/dataTables.bootstrap.js"></script>
         <script>
             $(document).ready(function () {
                 $('#dataTables-example').dataTable();
             });
     </script>
     <!-- Custom Js -->
-    <script src="assets/js/custom-scripts.js"></script> 
+    <script src="<?=base_url()?>assets/js/custom-scripts.js"></script> 
  
 
 </body>

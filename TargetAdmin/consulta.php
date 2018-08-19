@@ -4,21 +4,23 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Target Material Design Bootstrap Admin Template</title>
+    <title>Avaliação dos Bombeiros</title>
     
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link rel="stylesheet" href="assets/materialize/css/materialize.min.css" media="screen,projection" />
+    <link rel="stylesheet" href="<?=base_url();?>assets/materialize/css/materialize.min.css" media="screen,projection" />
     <!-- Bootstrap Styles-->
-    <link href="assets/css/bootstrap.css" rel="stylesheet" />
+    <link href="<?=base_url()?>assets/css/bootstrap.css" rel="stylesheet" />
     <!-- FontAwesome Styles-->
-    <link href="assets/css/font-awesome.css" rel="stylesheet" />
+    <link href="<?=base_url();?>assets/css/font-awesome.css" rel="stylesheet" />
     <!-- Morris Chart Styles-->
-    <link href="assets/js/morris/morris-0.4.3.min.css" rel="stylesheet" />
+    <link href="<?=base_url();?>assets/js/morris/morris-0.4.3.min.css" rel="stylesheet" />
     <!-- Custom Styles-->
-    <link href="assets/css/custom-styles.css" rel="stylesheet" />
+    <link href="<?=base_url();?>assets/css/custom-styles.css" rel="stylesheet" />
     <!-- Google Fonts-->
     <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css' />
-    <link rel="stylesheet" href="assets/js/Lightweight-Chart/cssCharts.css"> 
+    <link rel="stylesheet" href="<?=base_url();?>assets/js/Lightweight-Chart/cssCharts.css"> 
+
+    <link rel="stylesheet" href="http://code.jquery.com/qunit/qunit-1.11.0.css" type="text/css" media="all">
 </head>
 <body>
     <div id="wrapper">
@@ -30,7 +32,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand waves-effect waves-dark" href="index.html"><i class="large material-icons">track_changes</i> <strong>target</strong></a>
+                <a class="navbar-brand waves-effect waves-dark" href="index.html"><i class="large material-icons">track_changes</i> <strong>Aval. Bombeiros</strong></a>
                 
         <div id="sideNav" href=""><i class="material-icons dp48">toc</i></div>
             </div>
@@ -237,50 +239,149 @@
              <div class="card">
                         
                         <div class="card-content">
-    <form class="col s12">
+
+                            <?php 
+              if(isset($id)){
+               echo '<form class="col s12" method="post" name="formulario" action="'.BASE_URL()."consulta/atualizar".'">';
+               echo '<input type="hidden" id="id" name="id" value="'.$id.'">';
+              }else{
+               
+                echo '<form class="col s12" method="post" name="formulario" action="'.BASE_URL()."consulta/salvar".'">';
+              }
+              ?>
       <div class="row">
         <div class="input-field col s6">
-          <input id="first_name" type="text" class="validate">
-          <label for="first_name">Nome</label>
+          <input name="nome" type="text" 
+          <?php 
+               if (isset($nome)){
+                echo 'value="'.rtrim($nome).'" ';
+               } 
+          ?> class="validate">
+          <?php 
+            if (isset($nome)){
+                echo '<label for="first_name" class="active">Nome</label>';
+            }else{
+                echo '<label for="first_name" class="inative">Nome</label>';
+          }
+          ?>
         </div>
         <div class="input-field col s6">
-          <input id="last_name" type="text" class="validate">
-          <label for="last_name">Nascimento</label>
+          <input name="nascimento" type="text" 
+          <?php 
+               if (isset($nasc)){
+                //var_dump($nasc);
+                $dataSeparada = explode("-", $nasc);
+                $nasc = $dataSeparada[2]."/".$dataSeparada[1]."/".$dataSeparada[0];
+                echo 'value="'.$nasc.'" ';
+               } 
+          ?> class="dataBR">
+          <?php 
+            if (isset($nasc)){
+                echo '<label for="first_name" class="active">Nascimento</label>';
+            }else{
+                echo '<label for="first_name" class="inative">Nascimento</label>';
+          }
+          ?>
         </div>
       </div>
       <div class="row">
         <div class="input-field col s6">
-         <input id="first_name" type="text" class="validate">
-          <label for="first_name">CPF</label>
+         <input name="cpf" id="cpf" type="text"
+         <?php 
+               if (isset($cpf)){
+                echo 'value="'.$cpf.'" ';
+               } 
+          ?> class="cpfOuCnpj">
+          <?php 
+            if (isset($cpf)){
+                echo '<label for="first_name" class="active">CPF</label>';
+            }else{
+                echo '<label for="first_name" class="inative">CPF</label>';
+          }
+          ?>
         </div>
         <div class="input-field col s6">
           <label class="input-field inline" for="sexo" style="top:-30">Sexo</label>
-              <input name="group1" type="radio" id="test1" />
-              <label for="test1">Masculino</label>
-              <input name="group1" type="radio" id="test2" />
-              <label for="test2">Feminino</label>
+               <p>
+                <?php 
+                $cmasc = 'checked';
+                $cfem = '';
+                //var_dump($sexo);
+                if (isset($sexo)){
+                    if ($sexo == 't'){
+                        $cmasc = "checked";
+                        $cfem = "";
+                    }
+                    if ($sexo == 'f'){
+                        $cmasc = "";
+                        $cfem = "checked";   
+                    }
+
+                }
+                ?>
+                  <input name="sexo" type="radio" <?=$cmasc?> value="0" id="test1">
+                  <label for="test1">Masculino</label>
+                </p>
+                <p>
+                  <input name="sexo" type="radio" <?=$cfem?> value="1" id="test2">
+                  <label for="test2">Feminino</label>
+                </p>
          </div>
       </div>
-      <div class="row">
-        <div class="input-field col s12">
-          <input id="email" type="email" class="validate">
-          <label for="email">Email</label>
-        </div>
-      </div>
+      
       <div class="row">
         <div class="input-field col s12">
        <label class="input-field inline" for="escolaridade" style="top:-30">Escolaridade</label>
-           <input name="group1" type="checkbox" id="medio" />
-          <label for="medio">Medio</label>
-            &nbsp;&nbsp;&nbsp;
-           <input name="fundamental" type="checkbox" id="fundamental" />
+         <?php
+         if (isset($id)){
+            if ($fundamental == 't'){
+                $cFundamental = 'checked="checked"';
+            }else{
+                $cFundamental = '';
+            }
+
+             if ($medio == 't'){
+                $cMedio = 'checked="checked"';
+            }else{
+                $cMedio = '';
+            }
+
+             if ($superior == 't'){
+                $cSuperior = 'checked="checked"';
+            }else{
+                $cSuperior = '';
+            }
+        }else{
+             $cSuperior = '';
+             $cMedio = '';
+             $cFundamental = '';
+        }
+
+         ?>
+            <input name="fundamental" type="checkbox" <?=$cFundamental?> value="1" id="fundamental" />
           <label for="fundamental">Fundamental</label>
             &nbsp;&nbsp;&nbsp;
-           <input name="graduacao" type="checkbox" id="graduacao" />
-          <label for="graduacao">Graduação</label>
+             <input name="medio" type="checkbox" <?=$cMedio?> id="medio" value="1" />
+          <label for="medio">Medio</label>
+            &nbsp;&nbsp;&nbsp;
+           <input name="superior" type="checkbox" <?=$cSuperior?> value="1" id="superior" />
+          <label for="superior">Graduação</label>
 
       </div>
     </div>
+    <div class="row">
+        <div class="input-field col s12">
+            <?php 
+              if(isset($id)){
+                echo '<input type="submit" value="Atualizar">';
+              }else{
+               
+                echo '<input type="submit" value="Adicionar">';
+              }
+              ?>
+           
+        </div>
+    </div>    
     </form>
     <div class="clearBoth"></div>
   </div>
@@ -294,9 +395,11 @@
                         <!-- /.panel-body -->
                     </div> 
                 <!-- /.col-lg-12 --> 
-            <footer><p>Shared by <i class="fa fa-love"></i><a href="https://bootstrapthemes.co">BootstrapThemes</a>
-</p></footer>
-            </div>
+            <!-- /. ROW  -->
+            
+         
+              
+    </div>
              <!-- /. PAGE INNER  -->
             </div>
          <!-- /. PAGE WRAPPER  -->
@@ -304,29 +407,46 @@
      <!-- /. WRAPPER  -->
     <!-- JS Scripts-->
     <!-- jQuery Js -->
-    <script src="assets/js/jquery-1.10.2.js"></script>
+    <script src="<?=base_url();?>assets/js/jquery-1.10.2.js"></script>
     
     <!-- Bootstrap Js -->
-    <script src="assets/js/bootstrap.min.js"></script>
+    <script src="<?=base_url();?>assets/js/bootstrap.min.js"></script>
     
-    <script src="assets/materialize/js/materialize.min.js"></script>
+    <script src="<?=base_url();?>assets/materialize/js/materialize.min.js"></script>
     
     <!-- Metis Menu Js -->
-    <script src="assets/js/jquery.metisMenu.js"></script>
+    <script src="<?=base_url();?>assets/js/jquery.metisMenu.js"></script>
     <!-- Morris Chart Js -->
-    <script src="assets/js/morris/raphael-2.1.0.min.js"></script>
-    <script src="assets/js/morris/morris.js"></script>
+    <script src="<?=base_url();?>assets/js/morris/raphael-2.1.0.min.js"></script>
+    <script src="<?=base_url();?>assets/js/morris/morris.js"></script>
     
     
-    <script src="assets/js/easypiechart.js"></script>
-    <script src="assets/js/easypiechart-data.js"></script>
+    <script src="<?=base_url();?>assets/js/easypiechart.js"></script>
+    <script src="<?=base_url();?>assets/js/easypiechart-data.js"></script>
     
-     <script src="assets/js/Lightweight-Chart/jquery.chart.js"></script>
+     <script src="<?=base_url();?>assets/js/Lightweight-Chart/jquery.chart.js"></script>
     
     <!-- Custom Js -->
-    <script src="assets/js/custom-scripts.js"></script> 
+    <script src="<?=base_url();?>assets/js/custom-scripts.js"></script> 
+    <script src="<?=base_url();?>assets/js/jquery.mask.min.js"></script> 
+   
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.10/jquery.mask.js"></script>
+    <script type="text/javascript">
+      $(document).ready(function(){
  
+            var options = {
+                onKeyPress: function (cpf, ev, el, op) {
+                    var masks = ['000.000.000-000', '00.000.000/0000-00'];
+                    $('.cpfOuCnpj').mask((cpf.length > 14) ? masks[1] : masks[0], op);
+                }
+            }
 
+            $('.cpfOuCnpj').length > 11 ? $('.cpfOuCnpj').mask('00.000.000/0000-00', options) : $('.cpfOuCnpj').mask('000.000.000-00#', options);
+
+            });
+        $('.dataBR').mask('00/00/0000');
+      </script>
 </body>
 
 </html>
