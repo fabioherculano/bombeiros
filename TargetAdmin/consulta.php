@@ -277,9 +277,9 @@
           ?> class="dataBR">
           <?php 
             if (isset($nasc)){
-                echo '<label for="first_name" class="active">Nascimento</label>';
+                echo '<label for="first_name" class="active">Nascimento dd/mm/YYYY</label>';
             }else{
-                echo '<label for="first_name" class="inative">Nascimento</label>';
+                echo '<label for="first_name" class="inative">Nascimento dd/mm/YYYY</label>';
           }
           ?>
         </div>

@@ -242,6 +242,7 @@
                        
                         <div class="card-content">
                             <div class="table-responsive">
+                                click sobre os titulos para ter a ordenação necessária.
                                 <table class="table table-striped table-bordered table-hover" id="dataTables-example">
                                     <thead>
                                         <tr>

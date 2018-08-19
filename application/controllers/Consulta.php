@@ -8,7 +8,7 @@ class Consulta extends CI_Controller{
 
 
 function salvar(){
-	echo 'aeew';
+	
 	$this->load->model('Consulta_model');
 	$nome =  $_POST['nome'];
 	$nasc =  $_POST['nascimento'];
