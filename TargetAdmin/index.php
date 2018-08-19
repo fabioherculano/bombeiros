@@ -351,6 +351,7 @@
 			
 		
 				<footer><p>Desenvolvido por <i class="fa fa-love"></i><a href="#">Fabio Herculano</a>
+					<p>Toda felicidade somente é válida se compartilhada... assim como o conhecimento!
 </p>
 				
         
